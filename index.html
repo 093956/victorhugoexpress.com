@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VICTORHUGO EXPRESS S.A. | Transporte de Excelencia</title>
 
-    <!-- FAVICON (Imagen para el buscador y pestañas) -->
     <link rel="icon" type="image/png" href="imagenes/Logo1.png">
 
-    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- ICONOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -142,13 +139,46 @@
         .v1 { top: -5%; } .v2 { top: 25%; right: -10%; } .v3 { bottom: 0%; right: 10%; } .v4 { bottom: 0%; left: 10%; } .v5 { top: 25%; left: -10%; }
         .info-valor { position: absolute; width: 260px; background: #1e293b; color: white; border-left: 5px solid var(--secondary); padding: 18px; border-radius: 12px; font-size: 0.9rem; display: none; z-index: 10; text-align: center; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
 
-        /* GALERÍA HORIZONTAL */
-        .fleet-container { background: white; padding: 30px 15px; border-radius: var(--radius); box-shadow: var(--shadow); }
-        .gallery-horizontal { display: flex; justify-content: center; gap: 12px; flex-wrap: nowrap; overflow-x: auto; padding: 10px 0; scrollbar-width: none; }
-        .gallery-horizontal::-webkit-scrollbar { display: none; }
-        .gallery-item { flex: 1; min-width: 160px; max-width: 220px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); cursor: pointer; transition: var(--transition); }
-        .gallery-item:hover { transform: translateY(-5px); }
-        .gallery-item img { height: 180px; width: 100%; object-fit: cover; }
+        /* GALERÍA MODIFICADA: CARRUSEL DESLIZANTE CON IMÁGENES MÁS GRANDES */
+        .fleet-container { background: white; padding: 30px 20px; border-radius: var(--radius); box-shadow: var(--shadow); }
+        
+        .gallery-horizontal { 
+            display: flex; 
+            justify-content: flex-start; 
+            gap: 16px; 
+            flex-wrap: nowrap; 
+            overflow-x: auto; 
+            padding: 15px 5px;
+            scroll-snap-type: x mandatory; /* Habilita el anclaje magnético al deslizar */
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Barra de desplazamiento estética y fina en la parte inferior */
+        .gallery-horizontal::-webkit-scrollbar { height: 6px; display: block; }
+        .gallery-horizontal::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
+        .gallery-horizontal::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .gallery-horizontal::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        .gallery-item { 
+            flex: 0 0 auto; 
+            width: 85%; /* Se adapta dinámicamente ocupando gran parte de la pantalla */
+            min-width: 270px; /* Tamaño mínimo excelente para móviles */
+            max-width: 380px; /* Tamaño máximo ideal para computadoras */
+            border-radius: 18px; 
+            overflow: hidden; 
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1); 
+            cursor: pointer; 
+            transition: var(--transition);
+            aspect-ratio: 16 / 9; /* Proporción panorámica más grande y limpia */
+            scroll-snap-align: center; /* Centra la imagen automáticamente al deslizar */
+            background: #fff;
+        }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+        .gallery-item img { 
+            width: 100%;
+            height: 100%; 
+            object-fit: cover; 
+        }
 
         /* CONTACTO HORIZONTAL */
         .contact-section { padding: 50px 0; background: var(--light); }
@@ -172,10 +202,10 @@
 
         /* MOBILE OPTIMIZATION */
         @media(max-width:768px){
-            .menu-toggle { display: block; } /* Muestra el botón hamburguesa */
+            .menu-toggle { display: block; } 
             
             .nav-links { 
-                display: none; /* Oculta por defecto */
+                display: none; 
                 position: absolute;
                 top: 100%;
                 left: 0;
@@ -187,7 +217,7 @@
                 padding: 10px 0;
             }
 
-            .nav-links.active { display: flex; } /* Se muestra al activar JS */
+            .nav-links.active { display: flex; } 
 
             .nav-links a { 
                 padding: 15px;
@@ -202,8 +232,14 @@
             .gear-bg { font-size: 300px; }
             .valor-node { width: 80px; height: 80px; font-size: 0.6rem; }
             .centro-rueda { width: 100px; height: 100px; font-size: 0.75rem; }
-            .contact-grid, .gallery-horizontal { flex-wrap: wrap; justify-content: center; }
-            .contact-card, .gallery-item { flex: 0 0 calc(100% - 20px); min-width: 100%; }
+            
+            .contact-grid { flex-wrap: wrap; justify-content: center; }
+            .contact-card { flex: 0 0 calc(100% - 20px); min-width: 100%; }
+            
+            /* El slider horizontal se mantiene impecable en móviles sin romper la pantalla */
+            .gallery-horizontal { padding: 10px 0; }
+            .gallery-item { width: 85%; } 
+            
             .hero h1 { font-size: 2rem; }
             .section-title h2 { font-size: 1.8rem; }
         }
@@ -219,7 +255,6 @@
                 <span>VICTORHUGO EXPRESS</span>
             </div>
             
-            <!-- Icono para el menú móvil -->
             <div class="menu-toggle" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </div>
@@ -242,7 +277,7 @@
             <h2>Excelencia y Seguridad en el Transporte Peninsular</h2>
             <p>Especialistas en transporte escolar, institucional y empresarial. Tu seguridad y tranquilidad son nuestra prioridad.</p>
             <a href="https://wa.me/593981140253" target="_blank" class="btn-cta">
-                <i class="fab fa-whatsapp"></i> WhatsApp 
+                <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
         </div>
     </header>
@@ -308,11 +343,14 @@
             </div>
             <div class="fleet-container">
                 <div class="gallery-horizontal">
-                    <div class="gallery-item" onclick="openLightbox(0)"><img src="imagenes/Vehiculo1.jpeg"></div>
-                    <div class="gallery-item" onclick="openLightbox(1)"><img src="imagenes/Vehiculo2.jpeg"></div>
-                    <div class="gallery-item" onclick="openLightbox(2)"><img src="imagenes/Vehiculo3.jpeg"></div>
-                    <div class="gallery-item" onclick="openLightbox(3)"><img src="imagenes/Vehiculo4.jpeg"></div>
-                    <div class="gallery-item" onclick="openLightbox(4)"><img src="imagenes/Logo.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(0)"><img src="imagenes/Vehiculo3.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(1)"><img src="imagenes/Vehiculo8.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(2)"><img src="imagenes/Vehiculo7.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(3)"><img src="imagenes/Vehiculo6.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(4)"><img src="imagenes/Vehiculo5.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(5)"><img src="imagenes/Vehiculo4.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(6)"><img src="imagenes/Vehiculo2.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(7)"><img src="imagenes/Logo.jpeg"></div>
                 </div>
             </div>
         </div>
@@ -356,7 +394,6 @@
     </footer>
 
     <script>
-        // Función para abrir/cerrar el menú en móviles
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
             if (window.innerWidth <= 768) {
@@ -371,7 +408,16 @@
             setTimeout(() => { info.style.display = 'none'; }, 5000);
         }
 
-        const images = ["imagenes/Vehiculo1.jpeg", "imagenes/Vehiculo2.jpeg", "imagenes/Vehiculo3.jpeg", "imagenes/Vehiculo4.jpeg", "imagenes/Logo.jpeg"];
+        const images = [
+            "imagenes/Vehiculo3.jpeg", 
+            "imagenes/Vehiculo8.jpeg", 
+            "imagenes/Vehiculo7.jpeg", 
+            "imagenes/Vehiculo6.jpeg", 
+            "imagenes/Vehiculo5.jpeg", 
+            "imagenes/Vehiculo4.jpeg", 
+            "imagenes/Vehiculo2.jpeg", 
+            "imagenes/Logo.jpeg"
+        ];
         let currentIndex = 0;
 
         function openLightbox(index) {
