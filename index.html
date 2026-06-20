@@ -72,7 +72,6 @@
             border:2px solid var(--secondary); 
         }
 
-        /* BOTÓN HAMBURGUESA (Solo móvil) */
         .menu-toggle {
             display: none;
             color: white;
@@ -92,7 +91,6 @@
         }
         .nav-links a:hover { color:var(--secondary); }
 
-        /* HERO */
         .hero { 
             min-height: 80vh; 
             background: linear-gradient(rgba(30, 64, 175, 0.85), rgba(15, 23, 42, 0.7)), url('imagenes/Vehiculo1.jpeg') center/cover no-repeat fixed;
@@ -120,7 +118,7 @@
         .about-box { background: white; padding: 35px; border-radius: var(--radius); box-shadow: var(--shadow); border-left: 8px solid var(--primary); }
         .about-box p { font-size: 1.15rem; line-height: 1.7; color: var(--text); text-align: justify; }
 
-        /* MISION / VISION */
+        /* MISION y VISION */
         .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
         .card { background:white; padding:35px; border-radius:var(--radius); box-shadow:var(--shadow); transition:var(--transition); text-align: center; }
         .card:hover { transform: translateY(-5px); }
@@ -128,7 +126,7 @@
         .card h3 { font-size:1.5rem; margin-bottom:12px; color:var(--primary-dark); }
         .card p { font-size: 1rem; line-height: 1.6; }
 
-        /* RUEDA DE VALORES */
+        /* VALORES */
         .rueda-wrapper { display: flex; justify-content: center; padding: 30px 0; }
         .rueda-interactiva { position: relative; width: 420px; height: 420px; display: flex; align-items: center; justify-content: center; }
         .gear-bg { position: absolute; font-size: 380px; color: #e2e8f0; animation: spin 60s linear infinite; z-index: 1; opacity: 0.5; }
@@ -139,7 +137,7 @@
         .v1 { top: -5%; } .v2 { top: 25%; right: -10%; } .v3 { bottom: 0%; right: 10%; } .v4 { bottom: 0%; left: 10%; } .v5 { top: 25%; left: -10%; }
         .info-valor { position: absolute; width: 260px; background: #1e293b; color: white; border-left: 5px solid var(--secondary); padding: 18px; border-radius: 12px; font-size: 0.9rem; display: none; z-index: 10; text-align: center; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
 
-        /* GALERÍA MODIFICADA: CARRUSEL DESLIZANTE CON IMÁGENES MÁS GRANDES */
+        /* GALERÍA  */
         .fleet-container { background: white; padding: 30px 20px; border-radius: var(--radius); box-shadow: var(--shadow); }
         
         .gallery-horizontal { 
@@ -149,11 +147,10 @@
             flex-wrap: nowrap; 
             overflow-x: auto; 
             padding: 15px 5px;
-            scroll-snap-type: x mandatory; /* Habilita el anclaje magnético al deslizar */
+            scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
         }
         
-        /* Barra de desplazamiento estética y fina en la parte inferior */
         .gallery-horizontal::-webkit-scrollbar { height: 6px; display: block; }
         .gallery-horizontal::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
         .gallery-horizontal::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
@@ -161,16 +158,16 @@
 
         .gallery-item { 
             flex: 0 0 auto; 
-            width: 85%; /* Se adapta dinámicamente ocupando gran parte de la pantalla */
-            min-width: 270px; /* Tamaño mínimo excelente para móviles */
-            max-width: 380px; /* Tamaño máximo ideal para computadoras */
+            width: 85%; 
+            min-width: 270px; 
+            max-width: 380px; 
             border-radius: 18px; 
             overflow: hidden; 
             box-shadow: 0 6px 15px rgba(0,0,0,0.1); 
             cursor: pointer; 
             transition: var(--transition);
-            aspect-ratio: 16 / 9; /* Proporción panorámica más grande y limpia */
-            scroll-snap-align: center; /* Centra la imagen automáticamente al deslizar */
+            aspect-ratio: 16 / 9; 
+            scroll-snap-align: center; 
             background: #fff;
         }
         .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
@@ -180,7 +177,7 @@
             object-fit: cover; 
         }
 
-        /* CONTACTO HORIZONTAL */
+        /* CONTACTO */
         .contact-section { padding: 50px 0; background: var(--light); }
         .contact-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: nowrap; }
         .contact-card { flex: 1; background: var(--white); padding: 30px 15px; border-radius: var(--radius); text-align: center; transition: var(--transition); border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; box-shadow: var(--shadow); min-width: 0; }
@@ -190,7 +187,6 @@
         .contact-card h4 { font-size: 1.2rem; margin-bottom: 8px; }
         .contact-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.4; word-break: break-word; }
 
-        /* LIGHTBOX */
         #lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
         .lb-content { position: relative; width: 90%; height: 85%; display: flex; align-items: center; justify-content: center; }
         #lightbox-img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; }
@@ -200,7 +196,6 @@
 
         footer { background: #071120; padding: 20px 0; text-align: center; color: white; font-size: 0.9rem; }
 
-        /* MOBILE OPTIMIZATION */
         @media(max-width:768px){
             .menu-toggle { display: block; } 
             
@@ -236,7 +231,6 @@
             .contact-grid { flex-wrap: wrap; justify-content: center; }
             .contact-card { flex: 0 0 calc(100% - 20px); min-width: 100%; }
             
-            /* El slider horizontal se mantiene impecable en móviles sin romper la pantalla */
             .gallery-horizontal { padding: 10px 0; }
             .gallery-item { width: 85%; } 
             
@@ -275,9 +269,9 @@
             <img src="imagenes/Logo.jpeg" class="hero-logo" alt="Logo">
             <h1>VICTORHUGO EXPRESS S.A.</h1>
             <h2>Excelencia y Seguridad en el Transporte Peninsular</h2>
-            <p>Especialistas en transporte escolar, institucional y empresarial. Tu seguridad y tranquilidad son nuestra prioridad.</p>
+            <p>Especialistas en transporte escolar, institutional y empresarial. Tu seguridad y tranquilidad son nuestra prioridad.</p>
             <a href="https://wa.me/593981140253" target="_blank" class="btn-cta">
-                <i class="fab fa-whatsapp"></i> WhatsApp
+                <i class="fab fa-whatsapp"></i> WhatsApp 
             </a>
         </div>
     </header>
@@ -343,14 +337,18 @@
             </div>
             <div class="fleet-container">
                 <div class="gallery-horizontal">
-                    <div class="gallery-item" onclick="openLightbox(0)"><img src="imagenes/Vehiculo3.jpeg"></div>
-                    <div class="gallery-item" onclick="openLightbox(1)"><img src="imagenes/Vehiculo8.jpeg"></div>
-                    <div class="gallery-item" onclick="openLightbox(2)"><img src="imagenes/Vehiculo7.jpeg"></div>
-                    <div class="gallery-item" onclick="openLightbox(3)"><img src="imagenes/Vehiculo6.jpeg"></div>
-                    <div class="gallery-item" onclick="openLightbox(4)"><img src="imagenes/Vehiculo5.jpeg"></div>
-                    <div class="gallery-item" onclick="openLightbox(5)"><img src="imagenes/Vehiculo4.jpeg"></div>
-                    <div class="gallery-item" onclick="openLightbox(6)"><img src="imagenes/Vehiculo2.jpeg"></div>
-                    <div class="gallery-item" onclick="openLightbox(7)"><img src="imagenes/Logo.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(0)"><img src="imagenes/Vehiculo11.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(1)"><img src="imagenes/Vehiculo12.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(2)"><img src="imagenes/Vehiculo10.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(3)"><img src="imagenes/Vehiculo9.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(4)"><img src="imagenes/Vehiculo3.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(5)"><img src="imagenes/Vehiculo8.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(6)"><img src="imagenes/Vehiculo7.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(7)"><img src="imagenes/Vehiculo6.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(8)"><img src="imagenes/Vehiculo5.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(9)"><img src="imagenes/Vehiculo4.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(10)"><img src="imagenes/Vehiculo2.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(11)"><img src="imagenes/Logo.jpeg"></div>
                 </div>
             </div>
         </div>
@@ -408,7 +406,12 @@
             setTimeout(() => { info.style.display = 'none'; }, 5000);
         }
 
+        // ARREGLO DE IMÁGENES COMPLETO Y SINALIZADO CON EL NUEVO ORDEN
         const images = [
+            "imagenes/Vehiculo11.jpeg",
+            "imagenes/Vehiculo12.jpeg",
+            "imagenes/Vehiculo10.jpeg",
+            "imagenes/Vehiculo9.jpeg",
             "imagenes/Vehiculo3.jpeg", 
             "imagenes/Vehiculo8.jpeg", 
             "imagenes/Vehiculo7.jpeg", 
