@@ -72,6 +72,7 @@
             border:2px solid var(--secondary); 
         }
 
+        /* BOTÓN HAMBURGUESA (Solo móvil) */
         .menu-toggle {
             display: none;
             color: white;
@@ -91,6 +92,7 @@
         }
         .nav-links a:hover { color:var(--secondary); }
 
+        /* HERO */
         .hero { 
             min-height: 80vh; 
             background: linear-gradient(rgba(30, 64, 175, 0.85), rgba(15, 23, 42, 0.7)), url('imagenes/Vehiculo1.jpeg') center/cover no-repeat fixed;
@@ -118,7 +120,7 @@
         .about-box { background: white; padding: 35px; border-radius: var(--radius); box-shadow: var(--shadow); border-left: 8px solid var(--primary); }
         .about-box p { font-size: 1.15rem; line-height: 1.7; color: var(--text); text-align: justify; }
 
-        /* MISION y VISION */
+        /* MISION / VISION */
         .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
         .card { background:white; padding:35px; border-radius:var(--radius); box-shadow:var(--shadow); transition:var(--transition); text-align: center; }
         .card:hover { transform: translateY(-5px); }
@@ -126,7 +128,7 @@
         .card h3 { font-size:1.5rem; margin-bottom:12px; color:var(--primary-dark); }
         .card p { font-size: 1rem; line-height: 1.6; }
 
-        /* VALORES */
+        /* RUEDA DE VALORES */
         .rueda-wrapper { display: flex; justify-content: center; padding: 30px 0; }
         .rueda-interactiva { position: relative; width: 420px; height: 420px; display: flex; align-items: center; justify-content: center; }
         .gear-bg { position: absolute; font-size: 380px; color: #e2e8f0; animation: spin 60s linear infinite; z-index: 1; opacity: 0.5; }
@@ -137,7 +139,7 @@
         .v1 { top: -5%; } .v2 { top: 25%; right: -10%; } .v3 { bottom: 0%; right: 10%; } .v4 { bottom: 0%; left: 10%; } .v5 { top: 25%; left: -10%; }
         .info-valor { position: absolute; width: 260px; background: #1e293b; color: white; border-left: 5px solid var(--secondary); padding: 18px; border-radius: 12px; font-size: 0.9rem; display: none; z-index: 10; text-align: center; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
 
-        /* GALERÍA  */
+        /* GALERÍA MODIFICADA: CARRUSEL DESLIZANTE CON IMÁGENES MÁS GRANDES */
         .fleet-container { background: white; padding: 30px 20px; border-radius: var(--radius); box-shadow: var(--shadow); }
         
         .gallery-horizontal { 
@@ -177,7 +179,7 @@
             object-fit: cover; 
         }
 
-        /* CONTACTO */
+        /* CONTACTO HORIZONTAL */
         .contact-section { padding: 50px 0; background: var(--light); }
         .contact-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: nowrap; }
         .contact-card { flex: 1; background: var(--white); padding: 30px 15px; border-radius: var(--radius); text-align: center; transition: var(--transition); border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; box-shadow: var(--shadow); min-width: 0; }
@@ -269,7 +271,7 @@
             <img src="imagenes/Logo.jpeg" class="hero-logo" alt="Logo">
             <h1>VICTORHUGO EXPRESS S.A.</h1>
             <h2>Excelencia y Seguridad en el Transporte Peninsular</h2>
-            <p>Especialistas en transporte escolar, institutional y empresarial. Tu seguridad y tranquilidad son nuestra prioridad.</p>
+            <p>Especialistas en transporte escolar, institucional y empresarial. Tu seguridad y tranquilidad son nuestra prioridad.</p>
             <a href="https://wa.me/593981140253" target="_blank" class="btn-cta">
                 <i class="fab fa-whatsapp"></i> WhatsApp 
             </a>
@@ -330,6 +332,7 @@
         </div>
     </section>
 
+    <!-- FLOTA ACTUALIZADA CON VEHÍCULOS DEL 13 AL 20 -->
     <section id="flota">
         <div class="container">
             <div class="section-title">
@@ -348,7 +351,14 @@
                     <div class="gallery-item" onclick="openLightbox(8)"><img src="imagenes/Vehiculo5.jpeg"></div>
                     <div class="gallery-item" onclick="openLightbox(9)"><img src="imagenes/Vehiculo4.jpeg"></div>
                     <div class="gallery-item" onclick="openLightbox(10)"><img src="imagenes/Vehiculo2.jpeg"></div>
-                    <div class="gallery-item" onclick="openLightbox(11)"><img src="imagenes/Logo.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(11)"><img src="imagenes/Vehiculo13.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(12)"><img src="imagenes/Vehiculo15.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(13)"><img src="imagenes/Vehiculo16.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(14)"><img src="imagenes/Vehiculo17.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(15)"><img src="imagenes/Vehiculo18.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(16)"><img src="imagenes/Vehiculo19.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(17)"><img src="imagenes/Vehiculo20.jpeg"></div>
+                    <div class="gallery-item" onclick="openLightbox(18)"><img src="imagenes/Logo.jpeg"></div>
                 </div>
             </div>
         </div>
@@ -405,7 +415,8 @@
             info.style.display = 'block';
             setTimeout(() => { info.style.display = 'none'; }, 5000);
         }
-        
+
+        // ARREGLO DE IMÁGENES COMPLETO CON VEHÍCULOS DEL 13 AL 20
         const images = [
             "imagenes/Vehiculo11.jpeg",
             "imagenes/Vehiculo12.jpeg",
@@ -418,6 +429,13 @@
             "imagenes/Vehiculo5.jpeg", 
             "imagenes/Vehiculo4.jpeg", 
             "imagenes/Vehiculo2.jpeg", 
+            "imagenes/Vehiculo13.jpeg",
+            "imagenes/Vehiculo15.jpeg",
+            "imagenes/Vehiculo16.jpeg",
+            "imagenes/Vehiculo17.jpeg",
+            "imagenes/Vehiculo18.jpeg",
+            "imagenes/Vehiculo19.jpeg",
+            "imagenes/Vehiculo20.jpeg",
             "imagenes/Logo.jpeg"
         ];
         let currentIndex = 0;
