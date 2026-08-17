@@ -29,11 +29,14 @@
 
         * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
         
-        body { 
+        html, body { 
             font-family:'Poppins', sans-serif; 
             background:var(--white); 
             color:var(--text); 
-            overflow-x:hidden;
+            overflow-x:hidden; 
+            width: 100%;
+            max-width: 100vw;
+            position: relative;
             font-size: 1rem;
         }
         
@@ -45,6 +48,7 @@
         .navbar { 
             position:fixed; 
             top:0; 
+            left:0;
             width:100%; 
             z-index:999; 
             background:rgba(30, 64, 175, 0.95); 
@@ -126,7 +130,8 @@
         }
 
         .hero-logo { width:110px; margin:0 auto 20px; border-radius:50%; border:3px solid var(--secondary); box-shadow: 0 0 20px rgba(245, 180, 0, 0.3); }
-        .hero h1 { color: white; font-size:clamp(2.2rem, 6vw, 4.2rem); line-height:1.1; margin-bottom:15px; font-weight:800; letter-spacing: -1px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        
+        .hero h1 { color: white; font-size:clamp(2rem, 6vw, 4.2rem); line-height:1.1; margin-bottom:15px; font-weight:800; letter-spacing: -1px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); word-wrap: break-word; overflow-wrap: break-word; }
         .hero h2 { font-size:clamp(1.1rem, 2.5vw, 1.6rem); font-weight:500; letter-spacing: 2px; margin-bottom: 25px; color: var(--secondary); text-transform: uppercase;}
         .hero p { color: #f8fafc; font-size:1.15rem; line-height:1.7; margin-bottom:40px; max-width: 700px; margin-left: auto; margin-right: auto; }
 
@@ -151,7 +156,7 @@
         }
         .btn-cta:hover { transform: translateY(-3px); background: white; animation: none; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
 
-        section { padding: 90px 0; }
+        section { padding: 50px 0; }
         .section-title h2 { font-size:2.5rem; color:var(--primary); position:relative; display:inline-block; margin-bottom: 20px; font-weight: 800; }
         .section-title h2::after { content:''; width:60px; height:4px; background:var(--secondary); position:absolute; bottom:-10px; left:0; border-radius:10px; }
         .section-title.center h2::after { left: 50%; transform: translateX(-50%); }
@@ -187,7 +192,7 @@
 
         #valores { background: var(--light); text-align: center; }
         
-        .rueda-wrapper { display: flex; justify-content: center; padding: 20px 0 40px; }
+        .rueda-wrapper { display: flex; justify-content: center; padding: 10px 0 15px; }
         .rueda-interactiva { position: relative; width: 450px; height: 450px; display: flex; align-items: center; justify-content: center; }
         .gear-bg { position: absolute; font-size: 400px; color: #e2e8f0; animation: spin 60s linear infinite; z-index: 1; opacity: 0.8; }
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -202,7 +207,6 @@
         .v1 { top: -2%; } .v2 { top: 25%; right: -8%; } .v3 { bottom: 0%; right: 12%; } .v4 { bottom: 0%; left: 12%; } .v5 { top: 25%; left: -8%; }
         .info-valor { position: absolute; width: 300px; background: var(--primary-dark); color: white; border-left: 5px solid var(--secondary); padding: 25px; border-radius: 15px; font-size: 1rem; display: none; z-index: 10; text-align: center; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow: 0 20px 50px rgba(0,0,0,0.5); line-height: 1.6; }
 
-    
         #flota { 
             background: linear-gradient(135deg, var(--primary-dark) 0%, #0f172a 100%);
             color: white;
@@ -256,7 +260,7 @@
         #contacto { background: var(--white); }
         #contacto .section-title { text-align: center; }
         
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
         .contact-card { 
             background: var(--light); 
             padding: 50px 30px; 
@@ -301,7 +305,9 @@
         }
 
         @media(max-width:768px){
-        
+            /* ESPACIOS AÚN MÁS REDUCIDOS PARA MÓVIL */
+            section { padding: 40px 0; }
+            
             .menu-toggle { display: block; } 
             .nav-links { 
                 display: none; 
@@ -313,11 +319,10 @@
             .nav-links a { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); display: block; width: 100%; }
             .nav-links a::after { display: none; }
 
-        
             .hero-content { margin-top: 20px; }
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 2rem; }
             
-            #nosotros-integro { background: var(--light); padding: 60px 0; }
+            #nosotros-integro { background: var(--light); padding: 40px 0; }
             
             .about-text p {
                 background: white;
@@ -332,7 +337,7 @@
 
             .mv-container {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-template-columns: 1fr;
                 gap: 20px;
             }
 
@@ -342,8 +347,8 @@
                 align-items: center; 
                 gap: 15px; 
                 padding: 30px 20px; 
-                border: none; /* Sin línea a la izquierda */
-                background: white; /* Tarjeta blanca */
+                border: none; 
+                background: white; 
                 box-shadow: var(--shadow);
                 border-radius: var(--radius);
             }
@@ -353,14 +358,24 @@
             .mv-content h3 { font-size: 1.3rem; margin-bottom: 10px; text-align: center; }
             .mv-content p { font-size: 0.95rem; text-align: center; }
 
-            .rueda-interactiva { width: 320px; height: 320px; }
-            .gear-bg { font-size: 300px; }
-            .valor-node { width: 80px; height: 80px; font-size: 0.6rem; }
-            .centro-rueda { width: 100px; height: 100px; font-size: 0.75rem; }
+            .rueda-interactiva { width: 300px; height: 300px; }
+            .gear-bg { font-size: 260px; }
+            .valor-node { width: 75px; height: 75px; font-size: 0.55rem; }
+            .centro-rueda { width: 90px; height: 90px; font-size: 0.7rem; }
             
-            .gallery-horizontal { padding: 15px 0 30px 0; }
-            .gallery-item { width: 85%; min-width: 260px; } 
+            #flota .container { width: 100%; } 
+            #flota .section-title { padding: 0 20px; } 
+            .fleet-container { padding: 0; }
+            .gallery-horizontal { padding: 10px 20px 20px 20px; gap: 15px; }
+            .gallery-item { 
+                width: 90%; 
+                min-width: 290px; 
+                aspect-ratio: 16 / 10; 
+                border-radius: 15px; 
+            } 
             
+            .contact-grid { grid-template-columns: 1fr; }
+
             .lb-nav { width: 100%; left: 0; padding: 0 10px; }
             .lb-btn { width: 45px; height: 45px; font-size: 1.5rem; }
             .lb-close { right: 10px; top: -40px; }
@@ -414,6 +429,7 @@
                     </div>
                     <p><strong>VICTORHUGO EXPRESS S.A.</strong> es una compañía de la provincia de Santa Elena especializada en transporte Escolar, Institucional y Empresarial. Nuestra labor se centra en ofrecer recorridos seguros y puntuales, respaldados por una flota moderna y un equipo profesional comprometido con la tranquilidad de cada pasajero.</p>
                 </div>
+
                 <div class="mv-container" id="mision">
                     <div class="mv-card">
                         <i class="fas fa-bullseye"></i>
@@ -552,7 +568,7 @@
     <section class="contact-section" id="contacto">
         <div class="container">
             <div class="section-title center">
-                <h2>Contactos</h2>
+                <h2> Contactos </h2>
             </div>
             <div class="contact-grid">
                 <a href="https://wa.me/593981140253" target="_blank" class="contact-card">
